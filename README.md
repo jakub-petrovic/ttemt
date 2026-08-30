@@ -21,7 +21,7 @@ Makes input lowercased.
 ```bash
 # Using lowercase
 ./ttemt.sh lowercase "HeLlo" # Output --> hello
-echo "hEllo" | ./ttemt.sh uppercase # Output --> hello
+echo "hEllo" | ./ttemt.sh lowercase # Output --> hello
 # Using l
 ./ttemt.sh l "HeLlo" # Output --> hello
 echo "hEllo" | ./ttemt.sh l # Output --> hello
