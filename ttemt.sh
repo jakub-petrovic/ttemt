@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Copyright (C) 2026 Jakub Petrovič
+# > LICENSE: GNU AGPLv3
+# > Author: JPman
+# > Website: https://jpman.eu/
+# > Github repository: https://github.com/jakub-petrovic/ttemt
+ 
 # For anyone reading this codebase HF infront of function name stands for Helper function. It is a function that is used to help other functions. Hope this helps :).
 
 HFtogglecaseLetter() {
