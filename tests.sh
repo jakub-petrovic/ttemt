@@ -1,35 +1,34 @@
 #!/usr/bin/env bash
 CORRECTRUN=0
 EXPECTED=0
-echo "Running test 1."
-echo "./ttemt.sh tc \"Hello\""
-((EXPECTED++))
-TESTRUN=$(./ttemt.sh tc "Hello")
-if [[ $TESTRUN == "hELLO" ]]; then
-    ((CORRECTRUN++))
-else
-    echo "Error, wrong output. $TESTRUN"
-fi
-echo ""
-echo "Running test 2."
-echo "./ttemt.sh u \"Hello\""
-((EXPECTED++))
-TESTRUN=$(./ttemt.sh u "Hello")
-if [[ $TESTRUN == "HELLO" ]]; then
-    ((CORRECTRUN++))
-else
-    echo "Error, wrong output. $TESTRUN"
-fi
-echo ""
-echo "Running test 3."
-echo "./ttemt.sh l \"Hello\""
-((EXPECTED++))
-TESTRUN=$(./ttemt.sh l "Hello")
-if [[ $TESTRUN == "hello" ]]; then
-    ((CORRECTRUN++))
-else
-    echo "Error, wrong output. $TESTRUN"
-fi
+
+run_test() {
+    ((EXPECTED++))
+    echo "Running test $EXPECTED"
+    echo "$1"
+    EXPECTEDOUTPUT=$2
+    TESTRUN=$(eval "$1") 
+    if [[ $TESTRUN == $EXPECTEDOUTPUT ]]; then
+        ((CORRECTRUN++))
+        echo "Correct!"
+    else
+        echo "Error, wrong output."
+        echo "Testrun: $TESTRUN"
+        echo "Expected: $EXPECTEDOUTPUT"
+    fi
+}
+
+run_test './ttemt.sh tc "Hello"' "hELLO"
+run_test './ttemt.sh u "Hello"' "HELLO"
+run_test './ttemt.sh l "Hello"' "hello"
+
 
 echo ""
-echo "$CORRECTRUN \/ $EXPECTED"
+echo "$CORRECTRUN / $EXPECTED"
+if [[ $CORRECTRUN == $EXPECTED ]]; then
+    echo "All tests passed!"
+    exit 0
+else
+    echo "Some tests were wrong."
+    exit 1
+fi
