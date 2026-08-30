@@ -6,7 +6,7 @@
 ## Usage:
 - This script reads input from $2 or stdin.
 
-### **U**ppercase
+### Uppercase (u)
 - Makes input uppercased.
 ```bash
 # Using uppercase
