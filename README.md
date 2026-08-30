@@ -5,12 +5,15 @@
 - cat, env
 ## Usage:
 - This script reads input from $2 or stdin.
-- example:
-```
-root@example > ./ttemt.sh u "hello"
-HELLO
-root@example > echo "hello" | ./ttemt.sh u
-HELLO
-root@example >
+
+### **U**ppercase
+- Makes input uppercased.
+```bash
+# Using uppercase
+./ttemt.sh uppercase "HeLlo" # Output --> HELLO
+echo "hEllo" | ./ttemt.sh uppercase # Output --> HELLO
+# Using u
+./ttemt.sh u "HeLlo" # Output --> HELLO
+echo "hEllo" | ./ttemt.sh u # Output --> HELLO
 ```
 
