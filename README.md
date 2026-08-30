@@ -7,7 +7,7 @@
 - This script reads input from $2 or stdin.
 
 ### Uppercase (u)
-- Makes input uppercased.
+Makes input uppercased.
 ```bash
 # Using uppercase
 ./ttemt.sh uppercase "HeLlo" # Output --> HELLO
