@@ -5,7 +5,8 @@
 # > Author: JPman
 # > Website: https://jpman.eu/
 # > Github repository: https://github.com/jakub-petrovic/ttemt
- 
+# > Version 1.0
+
 # For anyone reading this codebase HF infront of function name stands for Helper function. It is a function that is used to help other functions. Hope this helps :).
 
 HFtogglecaseLetter() {
